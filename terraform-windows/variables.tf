@@ -1,8 +1,16 @@
 variable "vsphere_user" {}
 
-variable "vsphere_password" {}
+variable "vsphere_password" {
+  default= "Mystery"
+  sensitive = true
 
-variable "vsphere_server" {}
+}
+
+
+
+variable "vsphere_server" {
+  default= "vc-oit02.oit.umn.edu"
+}
 
 variable "windows_template" {
     default = "Win2019-Template-Base-Thin"
@@ -29,16 +37,19 @@ variable "vm-cpu" {
 
 variable "vm-ram" {
   type        = string
+  default =     "8"
   description = "Amount of RAM for the vSphere virtual machines (example: 2048)"
 }
 
 variable "domain" {
   type        = string
+  default     = "ad.umn.edu"
   description = "Domain for DNS and AD"
 }
 
 variable "domain_admin_user" {
   type        = string
+  default     = "oitserver-bind"
   description = "Domain account with necessary privileges to join a computer to the domain."
 }
 
@@ -49,6 +60,7 @@ variable "domain_admin_password" {
 
 variable "dns_server_list" {
   type        = list(any)
+  default     = ["128.101.101.101","134.84.84.84"]
   description = "list of DNS server IPs"
 }
 
@@ -69,5 +81,6 @@ variable "vmgateway" {
 
 variable "local_adminpass" {
   type        = string
+  default     = "Parcel#420$ForYou"
   description = "admin pass local to machine"
 }

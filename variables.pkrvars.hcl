@@ -1,0 +1,11 @@
+source_vm  = "MPT-heat-Full22"
+image_name = "HEAT-W22-Full"
+vsphere_user= "oit-vmware-automate"
+esxhost =  "win004.oit.umn.edu"
+datastore = "win-esx-wb-pfawb01-001"
+vm_name    = "MPT-Tekan"
+ipv4_addresses = ["192.168.118.1"]
+ipv4_netmasks  = [26]
+vmgateway      = "192.168.118.61"
+domain_admin_password = "UOqTeUrKPMAS67!^"
+vsphere_password = "*^y#FiV09eQ40BU9"
